@@ -1,0 +1,76 @@
+﻿@model HspFrontEnd.Models.AppointmentDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div>&nbsp;</div>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<service class="section-padding">
+    <div class="container">
+        <h2>Prendre rendez-vous</h2>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="PatientName" class="text-label"></label>
+                        <input asp-for="PatientName" class="form-control" />
+                        <span asp-validation-for="PatientName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConsultantName" class="text-label"></label>
+                        <select asp-for="ConsultantName" class="form-control" id="consultant-select">
+                            <option value="" selected disabled>Sélectionnez un consultant</option>
+                            <option value="John" data-specialty="Dermatologie">John</option>
+                            <option value="Jane" data-specialty="Cardiologie">Jane</option>
+                            <option value="Ben" data-specialty="Proctologie">Ben</option>
+                            <option value="Laura" data-specialty="Ologie">Laura</option>
+                        </select>
+                        <span asp-validation-for="ConsultantName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConsultantSpecialty" class="text-label"></label>
+                        <input asp-for="ConsultantSpecialty" class="form-control" readonly />
+                        <span asp-validation-for="ConsultantSpecialty" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AppointmentDate" class="text-label"></label>
+                        <input asp-for="AppointmentDate" class="form-control" />
+                        <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Enregistrer" class="btn btn-success" /> 
+                        <a asp-action="Index" class="btn btn-primary">Retour à la liste</a>
+                    </div>
+                </form>
+            </div>
+         </div>
+    </div>
+</service>
+
+<div>&nbsp;</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#consultant-select").change(function () {
+            var selectedOption = $(this).find("option:selected");
+            var specialty = selectedOption.data("specialty");
+            $("input[name='ConsultantSpecialty']").val(specialty);
+        });
+    });
+</script>
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

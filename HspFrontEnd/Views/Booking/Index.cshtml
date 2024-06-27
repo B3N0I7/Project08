@@ -1,0 +1,92 @@
+﻿@using System.Globalization;
+
+@model IEnumerable<HspFrontEnd.Models.AppointmentDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="section-padding">
+    <div class="container">
+        <h2>Liste des rendez-vous</h2>
+        &nbsp;
+        <div><a asp-action="Create" class="btn btn-primary">Ajouter un rendez-vous</a></div>
+        &nbsp;
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+
+        <form asp-action="Index" method="get">
+            <div class="form-group">
+                <label for="consultantFilter">Filtre par consultant :</label>
+                <select id="consultantFilter" name="consultantFilter" class="form-control">
+                    <option value="">Tous les consultants :</option>
+                    <option value="John">John</option>
+                    <option value="Jane">Jane</option>
+                    <option value="Ben">Ben</option>
+                    <option value="Laura">Laura</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="monthFilter">Filtre par mois :</label>
+                <select id="monthFilter" name="monthFilter" class="form-control">
+                    <option value="">Tous les mois</option>
+                    @for (int i = 1; i <= 12; i++)
+                    {
+                        <option value="@i">@CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i)</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="yearFilter">Filtre par année :</label>
+                <select id="yearFilter" name="yearFilter" class="form-control">
+                    <option value="">Toutes les années</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Filtrer</button>
+        </form>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PatientName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ConsultantName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AppointmentDate)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PatientName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ConsultantName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AppointmentDate)
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Supprimer</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

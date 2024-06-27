@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HspFrontEnd", "HspFrontEnd\HspFrontEnd.csproj", "{0F1AB974-0AFE-4C29-AE5A-3B1A2A7FD8A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotGateway", "Ocelot\OcelotGateway.csproj", "{DF3367E6-6B71-44D4-80E7-3946EB7E94D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingAppointmentApi", "BookingAppointmentApi\BookingAppointmentApi.csproj", "{EECA5FD2-6DE9-495F-8460-C0533F0A7D6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsultantCalendarApi", "ConsultantCalendarApi\ConsultantCalendarApi.csproj", "{91648AC6-86E4-4953-A0D8-E9348130E941}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingAppointmentApiTests", "BookingAppointmentApiTests\BookingAppointmentApiTests.csproj", "{E03C67F4-F54F-4D21-8245-0B4AC1BDCB18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultantCalendarApiTests", "ConsultantCalendarApiTests\ConsultantCalendarApiTests.csproj", "{64E7E621-B30C-491F-8E87-B003B04A96DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F1AB974-0AFE-4C29-AE5A-3B1A2A7FD8A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F1AB974-0AFE-4C29-AE5A-3B1A2A7FD8A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F1AB974-0AFE-4C29-AE5A-3B1A2A7FD8A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F1AB974-0AFE-4C29-AE5A-3B1A2A7FD8A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF3367E6-6B71-44D4-80E7-3946EB7E94D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF3367E6-6B71-44D4-80E7-3946EB7E94D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF3367E6-6B71-44D4-80E7-3946EB7E94D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF3367E6-6B71-44D4-80E7-3946EB7E94D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EECA5FD2-6DE9-495F-8460-C0533F0A7D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECA5FD2-6DE9-495F-8460-C0533F0A7D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECA5FD2-6DE9-495F-8460-C0533F0A7D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECA5FD2-6DE9-495F-8460-C0533F0A7D6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91648AC6-86E4-4953-A0D8-E9348130E941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91648AC6-86E4-4953-A0D8-E9348130E941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91648AC6-86E4-4953-A0D8-E9348130E941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91648AC6-86E4-4953-A0D8-E9348130E941}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E03C67F4-F54F-4D21-8245-0B4AC1BDCB18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E03C67F4-F54F-4D21-8245-0B4AC1BDCB18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E03C67F4-F54F-4D21-8245-0B4AC1BDCB18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E03C67F4-F54F-4D21-8245-0B4AC1BDCB18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64E7E621-B30C-491F-8E87-B003B04A96DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64E7E621-B30C-491F-8E87-B003B04A96DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64E7E621-B30C-491F-8E87-B003B04A96DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64E7E621-B30C-491F-8E87-B003B04A96DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4516BC62-A263-4533-AF66-338C19E98904}
+	EndGlobalSection
+EndGlobal

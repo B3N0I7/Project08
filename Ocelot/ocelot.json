@@ -1,0 +1,67 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:8882"
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/appointments/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamPathTemplate": "/appointments/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8883
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/appointments",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/appointments",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8883
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/consultantcalendars/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete", "Put" ],
+      "DownstreamPathTemplate": "/consultantcalendars/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8885
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/consultantcalendars",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/consultantcalendars",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8885
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    }
+  ]
+}

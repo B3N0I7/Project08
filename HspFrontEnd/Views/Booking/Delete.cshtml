@@ -1,0 +1,58 @@
+﻿@model HspFrontEnd.Models.AppointmentDto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<section class="section-padding">
+    <div class="container">
+        <h2>Suppression d'un rendez-vous</h2>
+
+        <h4>Etes-vous de vouloir supprimer le rendez-vous ?</h4>
+
+        <div>
+            <hr />
+
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.PatientName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.PatientName)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.ConsultantName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ConsultantName)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.ConsultantSpecialty)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ConsultantSpecialty)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.AppointmentDate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.AppointmentDate)
+                </dd>
+            </dl>
+            <div>
+                <form asp-action="ReallyDelete">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+                    <a asp-action="Index" class="btn btn-primary">Retour</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
